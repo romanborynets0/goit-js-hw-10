@@ -129,7 +129,6 @@
   border: 1px solid #4e75ff;
   outline: #4e75ff;
 }
-
 .form {
   width: 360px;
   color: #2e2f42;
@@ -177,7 +176,6 @@ fieldset:active {
   color: #4e75ff;
   background-color: #4e75ff;
 }
-
 .create-btn {
   display: flex;
   width: 360px;
