@@ -4,17 +4,16 @@ import iconClose from '../img/bi_x-octagon.png';
 import iconOk from '../img/bi_check2-circle.svg';
 
 const form = document.querySelector('.form');
-const submitBtn = document.querySelector('[type="submit"]');
 
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const delay = Number(document.querySelector('[name="delay"]').value);
-  const state = document.querySelector('[name="state"]:checked');
+  const delay = Number(event.target.elements.delay.value);
+  const state = event.target.elements.state.value;
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (state.value === 'fulfilled') {
+      if (state === 'fulfilled') {
         resolve(delay);
       } else {
         reject(delay);
@@ -41,4 +40,6 @@ form.addEventListener('submit', function (event) {
         iconUrl: iconClose,
       });
     });
+
+  form.reset(); // Очистити форму після відправлення
 });
